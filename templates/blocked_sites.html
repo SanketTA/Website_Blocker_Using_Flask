@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        table, th, td {
+          border: 1px solid black;
+          border-collapse: collapse;
+        }
+        </style>
+        <link rel="stylesheet" href="/static/style.css">
+    <title>Blocked Sites</title>
+</head>
+<body>
+    
+    <nav>
+        <div class="nav-links">
+            <ul>
+                <li><a href="/" style="color: black;">HOME</a></li>
+                <li><a href="./Options" style="color: black;">OPTIONS</a></li>
+                <li><a href="./About" style="color: black;">ABOUT</a></li>
+                <li><a href="./contact" style="color: black;">CONTACT</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <h1>Blocked Sites</h1>
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Site Name</th>
+            <th>Block Time</th>
+            <th>Block Date</th>
+        </tr>
+        {% for site in blocked_sites %}
+        <tr>
+            <td>{{ site[0] }}</td>
+            <td>{{ site[1] }}</td>
+            <td>{{ site[2] }}</td>
+            <td>{{ site[3] }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
